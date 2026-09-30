@@ -1,3 +1,20 @@
+
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileNav = document.querySelector('.nav');
+if(menuToggle && mobileNav){
+  menuToggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  document.querySelectorAll('.links a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    });
+  });
+}
 const year = new Date().getFullYear();
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = year);
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open')}));
