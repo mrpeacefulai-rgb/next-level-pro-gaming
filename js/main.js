@@ -43,3 +43,26 @@ function closeLightbox(){
 if(lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 if(lightbox) lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+
+// Shop product image enlargement
+document.querySelectorAll('.product-zoom').forEach(photo => {
+  photo.setAttribute('tabindex', '0');
+  photo.setAttribute('role', 'button');
+  photo.setAttribute('aria-label', 'Enlarge ' + (photo.alt || 'product image'));
+  const openProductImage = () => {
+    if(!lightbox || !lightboxImage) return;
+    lightboxImage.src = photo.currentSrc || photo.src;
+    lightboxImage.alt = photo.alt || 'Enlarged product image';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  photo.addEventListener('click', openProductImage);
+  photo.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openProductImage();
+    }
+  });
+});

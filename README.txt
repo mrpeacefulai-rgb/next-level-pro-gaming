@@ -1,16 +1,11 @@
-NEXT LEVEL PRO GAMING WEBSITE
+Next Level Pro Gaming website
 
-Updated with the official NLPG logo supplied on 30 September 2026.
+This folder contains the static website for GitHub Pages. The Shop page includes:
+- 16 PS5 face cover designs (R380 cover only / R550 supplied and installed)
+- 7 Standard rear trigger designs (R990 installed)
+- 4 Advanced rear trigger designs (R1,450 installed)
+- Standard + TMR bundle: R1,250 installed
+- Advanced + TMR bundle: R1,710 installed
+- Click-to-enlarge product photos and WhatsApp enquiry links
 
-Pages:
-- index.html
-- services.html
-- controller-upgrades.html
-- repair-gallary.html
-- about.html
-- contact.html
-
-The Repair Gallary is intentionally a separate page and contains no video.
-
-To deploy: upload the contents of this folder to your web host / Netlify site.
-The contact form is configured for Netlify Forms.
+To publish: copy the contents of this folder into your existing GitHub Pages repository, commit, and push.
